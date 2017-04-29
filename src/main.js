@@ -1,13 +1,15 @@
-var data = {
-  message: 'Hellow Xiaolu'
-}
+import Vue from 'vue'
+import Test from './components/Test'
 
 var app = new Vue({
   el: '#app',
-  data: data,
+  template: '<Test/>',
   methods: {
     reverseMessage: function () {
     }
+  },
+  components: {
+    Test
   },
   computed: {
   },
@@ -16,5 +18,3 @@ var app = new Vue({
   component: {
   }
 })
-
-console.log(data.allArticles === app.allArticles)
