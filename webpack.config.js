@@ -21,7 +21,31 @@ module.exports = {
         {
           test: /\.vue$/,
           loader: 'vue-loader'
-        }
+        },
+        {
+          test: /\.css$/,
+          use: [{
+              loader: 'style-loader' // creates style nodes from JS strings
+          }, {
+              loader: 'css-loader' // translates CSS into CommonJS
+          }]
+        },
+        {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            query: {
+                limit: 10000,
+                // name: utils.assetsPath('img/[name].[hash:7].[ext]')
+            }
+        },
+        {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            query: {
+                limit: 10000,
+                // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+            }
+        },
       ]
     }
 }
